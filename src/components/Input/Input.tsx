@@ -24,15 +24,19 @@ export const Input: React.FC<InputProps> = ({
   required,
   style,
 }) => {
+  const inputId = React.useId();
+  const errorId = `${inputId}-error`;
+
   return (
     <div className={styles.container}>
       {label && (
-        <label className={styles.label}>
+        <label className={styles.label} htmlFor={inputId}>
           {label}
           {required && <span className={styles.required}>*</span>}
         </label>
       )}
       <input
+        id={inputId}
         type={type}
         placeholder={placeholder}
         value={value}
@@ -41,10 +45,10 @@ export const Input: React.FC<InputProps> = ({
         style={style}
         className={`${styles.input} ${error ? styles.error : ''}`}
         aria-invalid={!!error}
-        aria-describedby={error ? 'error-message' : undefined}
+        aria-describedby={error ? errorId : undefined}
       />
       {error && (
-        <span id="error-message" className={styles.errorMessage}>
+        <span id={errorId} className={styles.errorMessage}>
           {error}
         </span>
       )}
