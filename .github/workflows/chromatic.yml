@@ -37,7 +37,6 @@ jobs:
         env:
           CHROMATIC_POLL_INTERVAL: 30000
 
-
   test-storybook:
     name: Test Storybook
     runs-on: ubuntu-latest
@@ -51,6 +50,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       - name: Build Storybook
         run: npm run build-storybook
