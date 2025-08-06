@@ -33,7 +33,8 @@ export const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       {...restProps}
     >
-      {loading ? <span className={styles.loader}>Loading...</span> : children}
+      {loading && <span className={styles.spinner}></span>}
+      <span className={loading ? styles.loadingText : ''}>{children}</span>
     </button>
   );
 };
