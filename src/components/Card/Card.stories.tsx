@@ -37,6 +37,9 @@ export const WithFooter: Story = {
         <Button size="small" variant="secondary">
           Cancel
         </Button>
+        <Button size="small" variant="secondary">
+          Delete
+        </Button>
       </div>
     ),
   },
