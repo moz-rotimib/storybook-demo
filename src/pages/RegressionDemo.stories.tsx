@@ -106,11 +106,11 @@ export const AfterChanges_WithRegressions: Story = {
               Primary
             </Button>
             {/* Regression: Wrong size */}
-            <Button variant="secondary" style={{ padding: '6px 12px' }}>
+            <Button variant="danger" style={{ padding: '6px 12px' }}>
               Secondary
             </Button>
             {/* Regression: Missing hover state */}
-            <Button variant="danger">Danger</Button>
+            <Button>Danger</Button>
             <Button disabled>Disabled</Button>
             {/* Regression: Loading spinner not showing */}
             <Button>Loading</Button>
@@ -150,6 +150,10 @@ export const AfterChanges_WithRegressions: Story = {
             <p style={{ margin: 0 }}>Highlighted card</p>
           </Card>
           <Card>
+            <h3 style={{ margin: '0 0 8px 0' }}>Card 2</h3>
+            <p style={{ margin: 0 }}>Default card style</p>
+          </Card>
+          <Card variant="highlighted">
             <h3 style={{ margin: '0 0 8px 0' }}>Card 2</h3>
             <p style={{ margin: 0 }}>Default card style</p>
           </Card>
